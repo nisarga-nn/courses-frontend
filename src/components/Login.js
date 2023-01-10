@@ -60,18 +60,18 @@ const Login = () => {
   };
 
   return (
-    <div className="logincontainer">
+    <div className="container">
       <h1 className="heading">Login</h1>
       <form onSubmit={handleSubmit}>
         <div className="form">
         <label>Email</label>
-        <input type="email" name="email" onChange={handleChange} />
+        <input className="input" type="email" name="email" onChange={handleChange} />
         <label>Password</label>
-        <input type="password" name="password" onChange={handleChange} />
+        <input className="input" type="password" name="password" onChange={handleChange} />
         <button className="btn">Log In</button>
         </div>
       </form>
-      <p>
+      <p className="end-txt">
         Don't have an account? <Link className="link" to="/signup"><b>Sign Up</b></Link>
       </p>
     </div>

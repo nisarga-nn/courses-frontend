@@ -50,21 +50,21 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>SignUp Form</h2>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form">
+        <h1 className="heading">SignUp Form</h1>
         <label>Name:</label>
-        <input type="name" name="name" onChange={handleChange} />
+        <input className="input" type="name" name="name" onChange={handleChange} />
         <label>Email:</label>
-        <input type="email" name="email" onChange={handleChange} />
+        <input className="input" type="email" name="email" onChange={handleChange} />
         <label>Password:</label>
-        <input type="password" name="password" onChange={handleChange} />
+        <input className="input" type="password" name="password" onChange={handleChange} />
         <label>Confirm Password:</label>
-        <input type="password" name="confirmpassword" onChange={handleChange} />
-        <button>SIGNUP</button>
+        <input className="input" type="password" name="confirmpassword" onChange={handleChange} />
+        <button className="btn">SIGNUP</button>
       </form>
-      <p>
-        If already a user <Link to="/login">click here</Link> to Login
+      <p className="end-txt2">
+        If already a user <Link className="link" to="/login">click here</Link> to Login
       </p>
     </div>
   );
