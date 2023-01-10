@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import '../css/style.css'
 
 const Login = () => {
   const[userDetails, setUserDetails] = useState("");
@@ -59,16 +60,19 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="logincontainer">
+      <h1 className="heading">Login</h1>
       <form onSubmit={handleSubmit}>
+        <div className="form">
         <label>Email</label>
         <input type="email" name="email" onChange={handleChange} />
         <label>Password</label>
         <input type="password" name="password" onChange={handleChange} />
-        <button>Login</button>
+        <button className="btn">Log In</button>
+        </div>
       </form>
       <p>
-        If not a user <Link to="/signup">click here</Link>to register
+        Don't have an account? <Link className="link" to="/signup"><b>Sign Up</b></Link>
       </p>
     </div>
   );
