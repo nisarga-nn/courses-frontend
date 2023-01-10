@@ -9,14 +9,16 @@ const Navbar = () => {
   return (
     context?.isUserLoggedIn && (
       <div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link onClick={context?.handleLogout}>
-            <button>Logout</button>
+        <nav className="nav">
+          <Link  className="nav-link" to="/">Home</Link>
+          <span className="nav-right">
+          <Link  className="nav-link" to="/add">
+            Add
           </Link>
-          <Link to="/add">
-            <button>ADD</button>
+          <Link  className="nav-link" onClick={context?.handleLogout}>
+            Logout
           </Link>
+          </span>
         </nav>
       </div>
     )

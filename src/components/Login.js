@@ -62,14 +62,12 @@ const Login = () => {
   return (
     <div className="container">
       <h1 className="heading">Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form">
+      <form onSubmit={handleSubmit} className="form">
         <label>Email</label>
         <input className="input" type="email" name="email" onChange={handleChange} />
         <label>Password</label>
         <input className="input" type="password" name="password" onChange={handleChange} />
-        <button className="btn">Log In</button>
-        </div>
+        <button className="btn">Login</button>
       </form>
       <p className="end-txt">
         Don't have an account? <Link className="link" to="/signup"><b>Sign Up</b></Link>

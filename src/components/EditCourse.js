@@ -74,8 +74,10 @@ const EditCourse = () => {
 
   return (
     <PrivateRoute>
-      <div>
+      <div className="container">
+        <h1 className="heading">Edit Course</h1>
         <form
+          className="form"
           onSubmit={(e) => {
             e.preventDefault();
 
@@ -91,29 +93,36 @@ const EditCourse = () => {
             }
           }}
         >
-          <h2 style={{ textAlign: "center" }}>Edit Course</h2>
+          <label>Course Name:</label>
           <input
+            className="input"
             type="text"
             name="name"
             placeholder="Course Name"
             onChange={handleChange}
             value={tutorials?.name}
           />
+          <label>Price:</label>
           <input
+            className="input"
             type="text"
             name="price"
             placeholder="Course Price"
             onChange={handleChange}
             value={tutorials?.price}
           />
+          <label>Duration:</label>
           <input
+            className="input"
             type="text"
             name="duration"
             placeholder="Course Duration"
             onChange={handleChange}
             value={tutorials?.duration}
           />
+          <label>Description:</label>
           <textarea
+            className="input"
             value={tutorials?.description}
             onChange={handleChange}
             name="description"
@@ -122,7 +131,7 @@ const EditCourse = () => {
             rows="8"
             placeholder="Course Description"
           />
-          <button>Edit Course</button>
+          <button className="btn">Edit Course</button>
         </form>
       </div>
     </PrivateRoute>

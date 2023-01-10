@@ -55,31 +55,32 @@ const AddCourse = () => {
 
   return (
     <PrivateRoute>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className="container">
+        <h1 className="heading">Add Course</h1>
+        <form className="form" onSubmit={handleSubmit}>
           <label>Enter Course Name:</label>
-          <input
+          <input className="input"
             type="text"
             onChange={handleChange}
             name="name"
             placeholder="eg: JavaScript Course"
           />
           <label>Price:</label>
-          <input
+          <input className="input"
             type="number"
             onChange={handleChange}
             name="price"
             placeholder="eg: 350"
           />
           <label>Duration:</label>
-          <input
+          <input className="input"
             type="text"
             onChange={handleChange}
             name="duration"
             placeholder="eg:3hr"
           />
           <label>Description:</label>
-          <textarea
+          <textarea className="input"
             name="description"
             id=""
             cols="30"
@@ -87,7 +88,7 @@ const AddCourse = () => {
             placeholder="Description.."
             onChange={handleChange}
           />
-          <button>SUBMIT</button>
+          <button className="btn">SUBMIT</button>
         </form>
       </div>
     </PrivateRoute>
