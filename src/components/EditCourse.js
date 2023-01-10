@@ -16,7 +16,7 @@ const EditCourse = () => {
     (async () => {
       try {
         const res = await fetch(
-          `http://localhost:4000/courses/get/${param?.id}`,
+          `https://courses-backend.vercel.app/courses/get/${param?.id}`,
           {
             method: "GET",
             headers: {
@@ -45,7 +45,7 @@ const EditCourse = () => {
   const handlEditTutorial = async () => {
     try {
       const savedCourse = await fetch(
-        `http://localhost:4000/courses/edit/${param?.id}`,
+        `https://courses-backend.vercel.app/courses/edit/${param?.id}`,
         {
           method: "PUT",
           headers: {

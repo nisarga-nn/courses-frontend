@@ -15,7 +15,7 @@ const AddCourse = () => {
 
   const handleAdd = async () => {
     try {
-      const response = await fetch("http://localhost:4000/courses/add", {
+      const response = await fetch("https://courses-backend.vercel.app/courses/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

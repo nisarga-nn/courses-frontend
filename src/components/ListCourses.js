@@ -8,7 +8,7 @@ const ListCourses = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("http://localhost:4000/courses/all", {
+        const response = await fetch("https://courses-backend.vercel.app/courses/all", {
           headers: {
             token: localStorage.getItem("token"),
             "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const ListCourses = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/courses/delete/${id}`,
+        `https://courses-backend.vercel.app/courses/delete/${id}`,
         {
           method: "DELETE",
           headers: {
