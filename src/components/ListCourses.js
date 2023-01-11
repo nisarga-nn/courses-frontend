@@ -45,7 +45,7 @@ const ListCourses = () => {
 
   return (
     <PrivateRoute>
-      <div className="container card-content">
+      <div className="container">
       <h1 className="heading">ListCourses</h1>
       <div className="grid-container">
         {courses?.map((item, index) => (

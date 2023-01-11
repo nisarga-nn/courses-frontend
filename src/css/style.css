@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(#0172af, #74febd);
-  height: 100vh;
+  height: 150vh;
   color: antiquewhite;
 }
 
@@ -78,8 +78,8 @@
   float: right;
 }
 
-.card{
-  background-image:linear-gradient(#ff4066,#fff16a);
+.card {
+  background-image: linear-gradient(#ff4066, #fff16a);
   padding: 10px;
   border-radius: 20px;
   border: solid 3px black;
@@ -88,26 +88,25 @@
   height: 30vh;
 }
 
-.grid-container{
+.grid-container {
   display: grid;
   grid-template-columns: auto auto;
 }
 
-.card-link{
+.card-link {
   text-decoration: none;
   color: antiquewhite;
   text-align: center;
-  
 }
 
-.float-right{
+.float-right {
   float: right;
 }
 
-.card-text{
+.card-text {
   height: 150px;
 }
 
-.card-btn{
+.card-btn {
   margin-top: 10px;
 }
