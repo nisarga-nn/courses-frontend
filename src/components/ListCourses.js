@@ -45,19 +45,23 @@ const ListCourses = () => {
 
   return (
     <PrivateRoute>
-      <div className="container">
+      <div className="container card-content">
       <h1 className="heading">ListCourses</h1>
       <div className="grid-container">
         {courses?.map((item, index) => (
           <div className="card" key={index}>
-            <Link to={`/`}>
+            <div className="card-text">
+            <Link className="card-link" to={`/`}>
               <h1>{item.name}</h1>
               <h3>{item.description}</h3>
               <p>Price - {item.price}</p>
-              <p>{item.duration}</p>
+              <p>Duration - {item.duration}</p>
             </Link>
+            </div>
+            <div className="card-btn">
             <Link to={`/edit/${item?._id}`}><button className="btn">Edit</button></Link>
-            <button className="btn" onClick={() => handleDelete(item?._id)}>Delete</button>
+            <button className="btn float-right" onClick={() => handleDelete(item?._id)}>Delete</button>
+          </div>
           </div>
         ))}
       </div>

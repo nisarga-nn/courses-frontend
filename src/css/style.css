@@ -84,9 +84,30 @@
   border-radius: 20px;
   border: solid 3px black;
   margin: 10px;
+  width: 25vh;
+  height: 30vh;
 }
 
 .grid-container{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+}
+
+.card-link{
+  text-decoration: none;
+  color: antiquewhite;
+  text-align: center;
+  
+}
+
+.float-right{
+  float: right;
+}
+
+.card-text{
+  height: 150px;
+}
+
+.card-btn{
+  margin-top: 10px;
 }
