@@ -18,8 +18,8 @@ function App() {
             <Route path="/" element={<ListCourses />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/add" element={<AddCourse/>}/>
-            <Route path="/edit/:id" element={<EditCourse/>}/>
+            <Route path="/add" element={<AddCourse />} />
+            <Route path="/edit/:id" element={<EditCourse />} />
           </Routes>
         </AuthProvider>
       </Router>

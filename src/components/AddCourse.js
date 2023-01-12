@@ -15,19 +15,22 @@ const AddCourse = () => {
 
   const handleAdd = async () => {
     try {
-      const response = await fetch("https://courses-backend.vercel.app/courses/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          token: localStorage.getItem("token"),
-        },
-        body: JSON.stringify({
-          name: courseDetails?.name,
-          price: courseDetails?.price,
-          duration: courseDetails?.duration,
-          description: courseDetails?.description,
-        }),
-      });
+      const response = await fetch(
+        "https://courses-backend.vercel.app/courses/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+          body: JSON.stringify({
+            name: courseDetails?.name,
+            price: courseDetails?.price,
+            duration: courseDetails?.duration,
+            description: courseDetails?.description,
+          }),
+        }
+      );
       const json = await response.json();
       if (!json?.isSuccess) {
         throw new Error(json?.message);
@@ -59,28 +62,32 @@ const AddCourse = () => {
         <h1 className="heading">Add Course</h1>
         <form className="form" onSubmit={handleSubmit}>
           <label>Enter Course Name:</label>
-          <input className="input"
+          <input
+            className="input"
             type="text"
             onChange={handleChange}
             name="name"
             placeholder="eg: JavaScript Course"
           />
           <label>Price:</label>
-          <input className="input"
+          <input
+            className="input"
             type="number"
             onChange={handleChange}
             name="price"
             placeholder="eg: 350"
           />
           <label>Duration:</label>
-          <input className="input"
+          <input
+            className="input"
             type="text"
             onChange={handleChange}
             name="duration"
             placeholder="eg:3hr"
           />
           <label>Description:</label>
-          <textarea className="input"
+          <textarea
+            className="input"
             name="description"
             id=""
             cols="30"

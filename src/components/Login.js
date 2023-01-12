@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import '../css/style.css'
+import "../css/style.css";
 
 const Login = () => {
-  const[userDetails, setUserDetails] = useState("");
+  const [userDetails, setUserDetails] = useState("");
   const navigate = useNavigate();
   const context = useContext(AuthContext);
 
@@ -26,16 +26,19 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("https://courses-backend.vercel.app/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: userDetails?.email,
-          password: userDetails?.password,
-        }),
-      });
+      const response = await fetch(
+        "https://courses-backend.vercel.app/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: userDetails?.email,
+            password: userDetails?.password,
+          }),
+        }
+      );
       const json = await response.json();
       //Error handling
       if (!json?.isSuccess) {
@@ -64,13 +67,26 @@ const Login = () => {
       <h1 className="heading">Login</h1>
       <form onSubmit={handleSubmit} className="form">
         <label>Email</label>
-        <input className="input" type="email" name="email" onChange={handleChange} />
+        <input
+          className="input"
+          type="email"
+          name="email"
+          onChange={handleChange}
+        />
         <label>Password</label>
-        <input className="input" type="password" name="password" onChange={handleChange} />
+        <input
+          className="input"
+          type="password"
+          name="password"
+          onChange={handleChange}
+        />
         <button className="btn">Login</button>
       </form>
       <p className="end-txt">
-        Don't have an account? <Link className="link" to="/signup"><b>Sign Up</b></Link>
+        Don't have an account?{" "}
+        <Link className="link" to="/signup">
+          <b>Sign Up</b>
+        </Link>
       </p>
     </div>
   );

@@ -8,12 +8,15 @@ const ListCourses = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("https://courses-backend.vercel.app/courses/all", {
-          headers: {
-            token: localStorage.getItem("token"),
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://courses-backend.vercel.app/courses/all",
+          {
+            headers: {
+              token: localStorage.getItem("token"),
+              "Content-Type": "application/json",
+            },
+          }
+        );
         const json = await response.json();
         setCourses(json.courses);
       } catch (err) {
@@ -46,25 +49,32 @@ const ListCourses = () => {
   return (
     <PrivateRoute>
       <div className="container">
-      <h1 className="heading">ListCourses</h1>
-      <div className="grid-container">
-        {courses?.map((item, index) => (
-          <div className="card" key={index}>
-            <div className="card-text">
-            <Link className="card-link" to={`/`}>
-              <h1>{item.name}</h1>
-              <h3>{item.description}</h3>
-              <p>Price - {item.price}</p>
-              <p>Duration - {item.duration}</p>
-            </Link>
+        <h1 className="heading">ListCourses</h1>
+        <div className="grid-container">
+          {courses?.map((item, index) => (
+            <div className="card" key={index}>
+              <div className="card-text">
+                <Link className="card-link" to={`/`}>
+                  <h1>{item.name}</h1>
+                  <h3>{item.description}</h3>
+                  <p>Price - {item.price}</p>
+                  <p>Duration - {item.duration}</p>
+                </Link>
+              </div>
+              <div className="card-btn">
+                <Link to={`/edit/${item?._id}`}>
+                  <button className="btn">Edit</button>
+                </Link>
+                <button
+                  className="btn float-right"
+                  onClick={() => handleDelete(item?._id)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
-            <div className="card-btn">
-            <Link to={`/edit/${item?._id}`}><button className="btn">Edit</button></Link>
-            <button className="btn float-right" onClick={() => handleDelete(item?._id)}>Delete</button>
-          </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
     </PrivateRoute>
   );
